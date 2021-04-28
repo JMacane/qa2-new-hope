@@ -1,0 +1,12 @@
+XPATH
+
+//div[@class = 'list-article__meta-info flex flex--justify-content-start flex--align-items-center']
+.//*[contains(@class, 'list-article__meta-info flex')]
+
+
+    private final By LOCATOR_BY_ID = By.id ("elementId");
+    private final By LOCATOR_BY_NAME = By.name("elementName");
+    private final By LOCATOR_BY_TAGNAME = By.tagName("nameOfTag")
+    private final By LOCATOR_BY_CLASS = By.className ("elementClassName");
+    private final By LOCATOR_BY_XPATH = By.xpath(".//*[contains(@class, 'list-article__meta-info flex'])");
+
