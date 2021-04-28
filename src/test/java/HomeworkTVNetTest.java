@@ -10,14 +10,17 @@ import java.util.List;
 
 public class HomeworkTVNetTest {
 
+    //COOKIES + DISPLAY BLOCK
     private final By ACCEPT_COOKIES_BTN = By.xpath(".//button[@mode = 'primary']");
     private final By DISPLAY_BLOCK_REMOVE = By.xpath(".//*[contains(@style, 'display:block')]");
 
+    //ARTICLES
     private final By ARTICLE = By.xpath(".//*[contains(@class, 'list-article__text')]");
     private final By TITLE_OF_CURRENT_ARTICLE = By.xpath(".//*[contains(@itemprop, 'headline name')]");
     private final By COUNT_OF_COMMENTS_TO_CURRENT_ARTICLE = By.xpath(".//*[contains(@class, 'list-article__comment section')]");
     private final By COMMENTS_TO_CURRENT_ARTICLE = By.xpath(".//*[contains(@class, 'article-share__item--comments')]");
 
+    //TVNET LOGO + RUS LANGUAGE
     private final By TVNET_LOGO = By.xpath(".//*[contains(@class, 'flex header-logo')]");
     private final By LANGUAGE_RUS = By.xpath(".//*[contains(text(), 'RUS')]");
 
