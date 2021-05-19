@@ -10,3 +10,31 @@ XPATH
     private final By LOCATOR_BY_CLASS = By.className ("elementClassName");
     private final By LOCATOR_BY_XPATH = By.xpath(".//*[contains(@class, 'list-article__meta-info flex'])");
 
+
+
+      //------FOR------------------------------------------------------------------------------------
+        for (int i = 0; i < titles.size(); i++) {
+            if (!titles.get(i).getText().isEmpty()) {
+                System.out.println(i + ": " + titles.get(i).getText());
+            }
+
+        }
+        //------FOREACH--------------------------------------------------------------------------------
+        for (WebElement we : titles) {
+            if (!we.getText().isEmpty()) {
+                System.out.println(we.getText());
+            }
+        }
+        //------IF&ElSE--------------------------------------------------------------------------------
+        for (WebElement we : titles) {
+            if (!we.getText().isEmpty()) {
+                System.out.println(we.getText());
+            } else {
+                System.out.println("------");
+            }
+        }
+        //------IF&ElSE--------------------------------------------------------------------------------
+        for (WebElement we : titles) {
+            // условие ? true : false (else)
+                System.out.println(we.getText() ? "------" : we.getText());
+        }

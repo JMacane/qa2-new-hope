@@ -38,7 +38,7 @@ public class HomeworkTVNetTest {
         List<WebElement> elements = browserWindow.findElements(ACCEPT_COOKIES_BTN);
 
         if (elements.size() != 0) {
-            wait.until(ExpectedConditions.presenceOfElementLocated(ACCEPT_COOKIES_BTN));
+            wait.until(ExpectedConditions.elementToBeClickable(ACCEPT_COOKIES_BTN));
             browserWindow.findElement(ACCEPT_COOKIES_BTN).click();
         }
 
