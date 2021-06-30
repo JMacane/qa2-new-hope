@@ -12,7 +12,7 @@ import pageobject.pages.HomePage;
 
 public class DelfiArticleCommentsTest {
     private final Logger LOGGER = LogManager.getLogger(this.getClass());
-    private final int ARTICLE_ID = 5;
+    private final int ARTICLE_ID = 2;
 
     private BaseFunc baseFunc;
 
@@ -32,20 +32,24 @@ public class DelfiArticleCommentsTest {
 
         ArticlePage articlePage = homePage.openArticle(ARTICLE_ID);
 
-
         //-------------------------ARTICLE PAGE----------------------------------------------------------
- //       ArticlePage articlePage = new ArticlePage(baseFunc);
+        //       ArticlePage articlePage = new ArticlePage(baseFunc);
 
         String articlePageTitle = articlePage.getTitle();
         int articlePageCommentsCount = articlePage.getCommentsCount();
 
-        Assertions.assertEquals(homePageTitle, articlePageTitle, "Wrong title!");
-        Assertions.assertEquals(homePageCommentsCount, articlePageCommentsCount, "Wrong comments count!");
+        Assertions.assertEquals(homePageTitle, articlePageTitle, "Wrong title on article page!");
+        Assertions.assertEquals(homePageCommentsCount, articlePageCommentsCount, "Wrong comments count on article page!");
 
-        articlePage.openCommentsPage ();
+        articlePage.openCommentsPage();
 
         //-------------------------COMMENTS PAGE---------------------------------------------------------
-        //...
+        int commentPageCommentCount = articlePage.getCommentsCountFromCommentPage();
+        Assertions.assertEquals(homePageCommentsCount, commentPageCommentCount, "Wrong comment count on comment page!");
+
+        String commentPageTitle = articlePage.getTitleFromCommentPage();
+        Assertions.assertEquals(homePageTitle, commentPageTitle, "Wrong title on comment page!");
+
     }
 
     @AfterEach
