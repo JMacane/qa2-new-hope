@@ -1,16 +1,16 @@
 package model;
 
 public class Weather {
-    private Integer id;
+    private long id;
     private String main;
     private String description;
     private String icon;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 

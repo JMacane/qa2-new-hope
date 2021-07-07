@@ -12,7 +12,7 @@ public class ArticlePage {
     private final By BOOKMARK_ANONYMOUS = By.xpath(".//li[contains (@class, 'show-anon')]");
     private final By BOOKMARK_REGISTERED = By.xpath(".//li[contains (@class, 'show-reg')]");
     private final By COMMENTS_ON_COMMENT_PAGE = By.xpath(".//span[contains (@class, 'type-cnt')]");
-    private final By TITLE_ON_COMMENT_PAGE = By.xpath(".//a[contains (@class, 'd-inline-block')]");
+    private final By TITLE_ON_COMMENT_PAGE = By.xpath(".//h1[contains(@class, 'article-title')]");
 
     private final Logger LOGGER = LogManager.getLogger(this.getClass());
 
@@ -71,6 +71,7 @@ public class ArticlePage {
         }
 
         int totalCommentCount = commentsInBookmarkAnonymous + commentsInBookmarkRegistered;
+        LOGGER.info("Article comments count from comments page: " + totalCommentCount);
         return totalCommentCount;
     }
 

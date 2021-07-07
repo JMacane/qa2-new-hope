@@ -3,34 +3,36 @@ package model;
 import io.cucumber.java.eo.Do;
 
 public class Sys {
-    private Integer type;
-    private Integer id;
-    private Double message;
-    private String country;
-    private Double sunrise;
-    private Double sunset;
 
-    public Integer getType() {
+    private int type;
+    private long id;
+    private double message;
+    private String country;
+    private long sunrise;
+    private long sunset;
+
+
+    public int getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Double getMessage() {
+    public double getMessage() {
         return message;
     }
 
-    public void setMessage(Double message) {
+    public void setMessage(double message) {
         this.message = message;
     }
 
@@ -42,19 +44,21 @@ public class Sys {
         this.country = country;
     }
 
-    public Double getSunrise() {
+    public long getSunrise() {
         return sunrise;
     }
 
-    public void setSunrise(Double sunrise) {
+    public void setSunrise(long sunrise) {
         this.sunrise = sunrise;
     }
 
-    public Double getSunset() {
+    public long getSunset() {
         return sunset;
     }
 
-    public void setSunset(Double sunset) {
+    public void setSunset(long sunset) {
         this.sunset = sunset;
     }
+
+
 }
