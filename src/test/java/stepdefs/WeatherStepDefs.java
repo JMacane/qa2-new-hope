@@ -65,10 +65,10 @@ public class WeatherStepDefs {
         Assertions.assertEquals(Long.parseLong(params.get("sunrise")), response.getSys().getSunrise(), "Incorrect Sys sunrise");
         Assertions.assertEquals(Long.parseLong(params.get("sunset")), response.getSys().getSunset(), "Incorrect Sys sunset");
 
-        LocalDate date = Instant.ofEpochMilli(response.getSys().getSunrise()).atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate date = Instant.ofEpochSecond(response.getSys().getSunrise()).atZone(ZoneId.systemDefault()).toLocalDate();
         System.out.println(date);
 
-        LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(response.getSys().getSunrise()), ZoneId.systemDefault());
+        LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(response.getSys().getSunrise()), ZoneId.systemDefault());
         System.out.println(dateTime);
     }
 
