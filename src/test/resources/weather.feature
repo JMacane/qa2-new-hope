@@ -15,21 +15,21 @@ Feature: Testing weather endpoint
 
 #    And base is "stations"
 #
-#    And main is:
-#      | temp     | 300.15 |
-#      | pressure | 1007   |
-#      | humidity | 74     |
-#      | temp_min | 300.15 |
-#      | temp_max | 300.15 |
+    And main is:
+      | temp     | 300.15 |
+      | pressure | 1007   |
+      | humidity | 74     |
+      | temp_min | 300.15 |
+      | temp_max | 300.15 |
 #
 #    And visibility is 10000
 #
-#    And wind is:
-#      | speed | 3.6 |
-#      | deg   | 160 |
-#
-#    And clouds are:
-#      | all | 40 |
+    And wind is:
+      | speed | 3.6 |
+      | deg   | 160 |
+
+    And clouds are:
+      | all | 40 |
 #
 #    And dt is 1485790200
 #
@@ -48,6 +48,4 @@ Feature: Testing weather endpoint
 #    And cod is 200
 
 
-#    Then lon is 145.77
-#    And lat is -16.92
 

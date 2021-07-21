@@ -2,6 +2,7 @@ package model;
 
 public class Wind {
     private Double speed;
+    private Integer deg;
 
     public Double getSpeed() {
         return speed;
@@ -19,6 +20,6 @@ public class Wind {
         this.deg = deg;
     }
 
-    private Integer deg;
+
 
 }

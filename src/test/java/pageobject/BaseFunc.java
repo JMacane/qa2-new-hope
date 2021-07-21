@@ -1,4 +1,4 @@
-package pageobject.pages;
+package pageobject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -68,11 +69,22 @@ public class BaseFunc {
 
     public void closeBrowser() {
         LOGGER.info("Closing browser window");
-        if (driver != null )
-        {
+        if (driver != null) {
             driver.close();
         }
 
+    }
+
+    public WebElement findElement(By locator) {
+        LOGGER.info("Getting element by locator:" + locator);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+    }
+
+    public void select(By dropdown, String text) {
+        LOGGER.info("Selecting " + text + " from dropdown by locator:" + dropdown);
+        Select select = new Select(findElement(dropdown));
+        select.selectByVisibleText(text);
     }
 
 }

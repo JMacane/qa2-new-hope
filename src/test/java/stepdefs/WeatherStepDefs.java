@@ -11,6 +11,7 @@ import model.WeatherResponse;
 import org.junit.jupiter.api.Assertions;
 import requesters.WeatherRequester;
 
+import java.io.StringWriter;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -45,8 +46,8 @@ public class WeatherStepDefs {
 
         Assertions.assertEquals(weathers.size(), response.getWeathers().size(), "Incorrect size of list Weathers");
 
-        for (int i = 0; i< weathers.size(); i++){
-            Map<String,String> expectedWeather = weathers.get(i);
+        for (int i = 0; i < weathers.size(); i++) {
+            Map<String, String> expectedWeather = weathers.get(i);
             Weather actualWeather = response.getWeathers().get(i);
 
             Assertions.assertEquals(Long.parseLong(expectedWeather.get("id")), actualWeather.getId(), "Incorrect Weathers id");
@@ -71,5 +72,31 @@ public class WeatherStepDefs {
         LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(response.getSys().getSunrise()), ZoneId.systemDefault());
         System.out.println(dateTime);
     }
+
+//    @Then("base is {String}")
+//    public void check_base(String base) {
+//        Assertions.assertEquals(base, response.getBase(), "Incorrect Base value");
+//    }
+
+    @Then("main is:")
+    public void check_main(Map<String, String> params) {
+        Assertions.assertEquals(Double.parseDouble(params.get("temp")), response.getMain().getTemp(), "Incorrect Main temp");
+        Assertions.assertEquals(Integer.parseInt(params.get("pressure")), response.getMain().getPressure(), "Incorrect Main pressure");
+        Assertions.assertEquals(Integer.parseInt(params.get("humidity")), response.getMain().getHumidity(), "Incorrect Main humidity");
+        Assertions.assertEquals(Double.parseDouble(params.get("temp_min")), response.getMain().getTemp_min(), "Incorrect Main temp_min");
+        Assertions.assertEquals(Double.parseDouble(params.get("temp_max")), response.getMain().getTemp_max(), "Incorrect Main temp_max");
+    }
+
+    @Then("wind is:")
+    public void check_wind(Map<String, String> params) {
+        Assertions.assertEquals(Double.parseDouble(params.get("speed")), response.getWind().getSpeed(), "Incorrect Wind speed");
+        Assertions.assertEquals(Integer.parseInt(params.get("deg")), response.getWind().getDeg(), "Incorrect Wind deg");
+    }
+
+    @Then("clouds are:")
+    public void check_clouds(Map<String, Integer> params) {
+        Assertions.assertEquals(params.get("all"), response.getClouds().getAll(), "Incorrect Clouds all");
+    }
+
 
 }
