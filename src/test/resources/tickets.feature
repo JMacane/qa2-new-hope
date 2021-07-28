@@ -19,19 +19,19 @@ Feature: Ticket reservation service check
     Then airports are displayed on passenger info page
 
     When we are submitting passenger info
-#
-#    Then name appears in summary
-#    And price calculated is: 3600
-#    And reservation number appears
-#
-#    When we are pressing Book button
-#    And selecting seat number
-#
-#    Then seat number appears on page
-#
-#    When we are booking flight
-#
-#    Then success message appears
+
+    Then name appears in summary
+    And price calculated is: 3600
+
+
+    When we are pressing Book button
+    And selecting seat number
+
+    Then seat number appears on page
+
+    When we are booking flight
+
+    Then success message appears
 #
 #    When we are requesting reservations via API
 

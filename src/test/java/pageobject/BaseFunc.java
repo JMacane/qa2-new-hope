@@ -67,6 +67,11 @@ public class BaseFunc {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
     }
 
+    public String getText(By parent, By child) {
+        LOGGER.info("Getting text by " + parent + " and " + child);
+        return wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(parent, child)).getText();
+    }
+
     public void closeBrowser() {
         LOGGER.info("Closing browser window");
         if (driver != null) {
@@ -85,6 +90,17 @@ public class BaseFunc {
         LOGGER.info("Selecting " + text + " from dropdown by locator:" + dropdown);
         Select select = new Select(findElement(dropdown));
         select.selectByVisibleText(text);
+    }
+
+    public void type(By locator, String text) {
+        LOGGER.info("Typing " + text + " into " + locator);
+        WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        input.clear();
+        input.sendKeys(text);
+    }
+
+    public void type(By locator, int text) {
+        type(locator, String.valueOf(text));
     }
 
 }
