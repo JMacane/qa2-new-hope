@@ -62,4 +62,9 @@ public class TicketsStepDefs {
         Assertions.assertEquals(given.getAto(), airports.get(1).getText(), "Wrong arrival airport");
 
     }
+
+    @When("we are submitting passenger info")
+    public void fill_passenger_info() {
+
+    }
 }

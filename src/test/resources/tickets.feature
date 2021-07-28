@@ -18,7 +18,7 @@ Feature: Ticket reservation service check
 
     Then airports are displayed on passenger info page
 
-#    When we are submitting passanger info
+    When we are submitting passenger info
 #
 #    Then name appears in summary
 #    And price calculated is: 3600
